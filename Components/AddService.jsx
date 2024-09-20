@@ -7,15 +7,27 @@ const AddServiceForm = ({ addService }) => {
     price: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!service.name || !service.description || !service.price) return;
+
+    if (!service.name || !service.description || !service.price) {
+      setError("All fields are required!");
+      return;
+    }
+
+    setError("");
+
     addService(service);
+
     setService({ name: "", description: "", price: "" });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex  flex-col space-x-4">
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+      {error && <p className="text-red-500">{error}</p>}
+
       <input
         type="text"
         placeholder="Service Name"
@@ -23,6 +35,7 @@ const AddServiceForm = ({ addService }) => {
         onChange={(e) => setService({ ...service, name: e.target.value })}
         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+
       <input
         type="text"
         placeholder="Description"
@@ -32,6 +45,7 @@ const AddServiceForm = ({ addService }) => {
         }
         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+
       <input
         type="number"
         placeholder="Price"
@@ -39,9 +53,10 @@ const AddServiceForm = ({ addService }) => {
         onChange={(e) => setService({ ...service, price: e.target.value })}
         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+
       <button
         type="submit"
-        className="bg-green-500 text-white px-4 py-2 rounded"
+        className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
       >
         Add Service
       </button>

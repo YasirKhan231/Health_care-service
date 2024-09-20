@@ -19,7 +19,7 @@ const ServiceList = ({ services, deleteService, setServiceToUpdate }) => {
           <div className="flex justify-between mt-4">
             <Button
               color="green"
-              className=" text-white shadow-md"
+              className=" text-white "
               onClick={() => setServiceToUpdate(service)}
             >
               Edit

@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import AddServiceForm from "../Components/AddService";
 import UpdateServiceForm from "../Components/UpdateService";
-import ServiceList from "../Components/ServiceList"; // Make sure to import ServiceList
+import ServiceList from "../Components/ServiceList";
 
 function App() {
   const [services, setServices] = useState([]);
@@ -18,12 +18,11 @@ function App() {
 
   const updateService = (updatedService) => {
     setServices(
-      services.map(
-        (service) =>
-          service.id === updatedService.id ? updatedService : service // Use id for better matching
+      services.map((service) =>
+        service.id === updatedService.id ? updatedService : service
       )
     );
-    setServiceToUpdate(null); // Clear selection after updating
+    setServiceToUpdate(null);
   };
 
   return (

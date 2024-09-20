@@ -3,14 +3,13 @@ import { Button } from "@material-tailwind/react";
 const UpdateServiceForm = ({ service, updateService }) => {
   const [updatedService, setUpdatedService] = useState(service);
 
-  // Update the state when the service prop changes
   useEffect(() => {
     setUpdatedService(service);
   }, [service]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Updated Service:", updatedService); // Debugging log
+    console.log("Updated Service:", updatedService);
     updateService(updatedService);
   };
 
@@ -43,11 +42,7 @@ const UpdateServiceForm = ({ service, updateService }) => {
         className="w-full px-4 py-2 border rounded"
         placeholder="Price"
       />
-      <Button
-        type="submit"
-        color="green"
-        // className="bg-yellow-500 text-white px-4 py-2 rounded"
-      >
+      <Button type="submit" color="green">
         Update Service
       </Button>
     </form>
