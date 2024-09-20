@@ -28,3 +28,4 @@ Follow these steps to set up and run the project locally:
 2. cd healthcare-services
 3. npm install
 4. npm run dev
+5. http://localhost:5173
