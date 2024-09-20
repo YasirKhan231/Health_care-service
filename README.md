@@ -25,7 +25,7 @@ Follow these steps to set up and run the project locally:
    ```bash
    git clone git@github.com:YasirKhan231/Health_care-service.git
    ```
-2. ```bash cd healthcare-services ```
-3.  ```bash npm install  ```
-4.  ```bash npm run dev  ```
+2. ``` cd healthcare-services ```
+3.  ``` npm install  ```
+4.  ``` npm run dev  ```
 5. http://localhost:5173
